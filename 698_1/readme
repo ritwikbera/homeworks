@@ -1,0 +1,5 @@
+Code tested on MATLAB R2016a
+
+-Run ols.m for Question 8 part a
+-Run pca_ransac.m for Question 8 part b
+-Run ransurf.m for Question 9 (Tip: Maximize plot window to clearly see planes)

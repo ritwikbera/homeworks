@@ -1,0 +1,17 @@
+clear all;
+figure;
+v=diag([10,2]);
+v1=[1 5]'; 
+v2=[-5 1]'; 
+u=[v1/norm(v1) v2/norm(v2)];
+plot([0 v1(1)]*0.6,[0 v1(2)]*0.6,'r'); hold on;
+plot([0 v2(1)]*0.6,[0 v2(2)]*0.6,'r'); hold on;
+R=u*v*u';
+z = randn(200,2)*sqrtm(R);
+plot(z(:,1),z(:,2),'.');  hold on;
+save('data.mat','z');
+[mn,pc]=pca(z);
+disp(pc);
+plot([0 pc(1,1)]*3,[0 pc(2,1)]*3,'g'); hold on;
+plot([0 pc(1,2)]*3,[0 pc(2,2)]*3,'g'); hold on;
+axis equal;
